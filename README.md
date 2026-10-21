@@ -24,8 +24,6 @@ If you have experience worth transmitting, you already have the scarce ingredien
 
 This is a living, forkable starting point, not a constitution. Develop your own rules with your own LLM. Keep what helps. Change what does not. Contribute lessons when you have something useful to show.
 
-*Draft seed, not yet independently piloted as a complete starting document. Prepared by Cadence with Bill Cox, drawing on Bill and CodeRhapsody's codebook work and later reconstruction experience. AI-assisted authorship is explicit; the historical work does not establish that this new document already works for everyone.*
-
 ---
 
 # 1. Start here: the executable protocol
@@ -507,7 +505,7 @@ The source account, *Agentic Codebooks*, preserves that history and its qualific
 
 The ingredients are familiar: expert elicitation, incremental development, literate explanation, executable acceptance checks, independent implementation, and review. The proposition is that combining them this way can make expert judgment more transferable and software reconstruction more disciplined. The evidence motivating it is useful, but it is not a controlled demonstration of universal cost, quality, productivity, or technical-debt gains.
 
-This version has not yet passed its own fresh-pair pilot. Several successful trials by the original authors would still leave broader adoption untested. A compelling opening is not proof of usefulness; a viral repository is not proof of correctness. Those distinctions belong in future reports, even if the method becomes popular.
+This seed has not yet been tested by a fresh expert–AI pair. Several successful trials by the original authors would still leave broader adoption untested. A compelling opening is not proof of usefulness; a viral repository is not proof of correctness. Those distinctions belong in future reports, even if the method becomes popular.
 
 **The invitation is to find out by building something small and real.**
 
