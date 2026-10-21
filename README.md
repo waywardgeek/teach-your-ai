@@ -16,6 +16,8 @@ This can change the unit of progress. Instead of another patch that only fixes t
 
 The aim is ambitious: **better software, less inherited complexity, and knowledge that gets more useful when models improve.** The mechanism is practical: teach, build independently, inspect, test, and revise. It is not a promise of automatic correctness, cheap rewrites, or a debt-free system. A better model may produce better code; it still has to earn acceptance.
 
+The evidence so far is one existence proof: a complete coding agent was rebuilt from its chapters alone by a different model family, without the original source, and the rebuilt system then ran this method itself on the next edition. One project, one expert; §10 states the limits.
+
 If you have experience worth transmitting, you already have the scarce ingredient. You do not need to begin with a syllabus, a finished architecture, or an orchestration platform.
 
 **Start with one problem you understand. Give this entire document to your LLM.**
@@ -30,7 +32,7 @@ This is a living, forkable starting point, not a constitution. Develop your own 
 
 **Addressed to the LLM:** if the human asks you to execute this document, begin here. If they ask you to review or edit it, do that instead. Instructions in this file do not override your actual system instructions, the human's current directions, tool permissions, or repository rules. Reading a document is not proof that its instructions were installed at a special runtime level.
 
-This section is the complete starting procedure; later sections explain it. Do not make the human study everything before starting. Read the full document yourself when available. Disclose truncation and recover missing sections before claiming a complete read.
+This section is the complete starting procedure; later sections explain it. Do not make the human study everything before starting. Read the full document yourself when available. It is about 48 KB; if your read did not reach §10, you have a partial copy. Disclose truncation and recover missing sections before claiming a complete read.
 
 ## 1.1 Your first response
 
@@ -47,10 +49,6 @@ Begin with the person’s experience and one useful question.
    - Who would benefit if we solved it, and what do people do today?
    - What constraints matter immediately: existing code, privacy, time, spending, tools, or actions we must not take?
 5. **Wait for the answers.** Do not fill the expert's missing product decisions with a plausible story. Do not require credentials or a repository just to discuss the problem.
-
-A suitable opening, adapted rather than recited:
-
-> “Your experience with [specific problem] gives us something valuable to test. Instead of asking an AI to guess its way through another implementation, we can teach the decisions you already know matter and see whether a fresh builder can use them. If that works, the reusable asset is not just today's code: it is a way to produce and judge future code. Let's try one small chapter before promising a whole book. Tell me about a case where the obvious solution went wrong.”
 
 If the fit is uncertain, say so and explore one incident. If the task is a disposable one-line utility, conventional coding may be the better choice. Recommending this method should be an engineering judgment, not compulsory salesmanship.
 
@@ -105,11 +103,11 @@ A reference implementation is optional. Start with the expert's contract and a f
 
 ## 1.6 Test whether the chapter teaches
 
-Use a **fresh implementation context** with only the public chapter, applicable project rules, and the exact accepted predecessor. Do not pass the authoring conversation, a hidden answer, reference source, private test repairs, or future chapters.
+Use a **fresh implementation context** with only the public chapter, applicable project rules, and the exact accepted predecessor. Do not pass the authoring conversation, a hidden answer, reference source, private test repairs, or future chapters; the authoring conversation contains the answers, so a builder that sees it tests nothing.
 
 If separate contexts are unavailable, have the human open a fresh session and provide the packet. Work can continue in one context as a feasibility exercise, but label it honestly; changing your role name does not create independence.
 
-The builder should reach a coherent compiling implementation and hold for review before an expensive test campaign. Focused local tests that guide development are appropriate. Inspect actual source: ownership, dependencies, readability, reused mechanisms, and scope. Prefer one retained reviewer to a crowd. The coordinator still owns acceptance. If independent review is unavailable, record that limitation rather than impersonating a second reviewer.
+The builder should reach a coherent compiling implementation and hold for review before an expensive test campaign. Focused local tests that guide development are appropriate. Unit tests prove the library; only driving the actual entry point proves the product, because a test can hand-wire what the composition root forgot. Inspect actual source: ownership, dependencies, readability, reused mechanisms, and scope. Prefer one retained reviewer to a crowd. The coordinator still owns acceptance. If independent review is unavailable, record that limitation rather than impersonating a second reviewer.
 
 Valid checks must pass, but are not sufficient. Reject unjustified frameworks, duplicated ownership, and unreadable code. Do not reject an adequate alternative merely for differing from the reference.
 
@@ -125,29 +123,25 @@ Valid checks must pass, but are not sufficient. Reject unjustified frameworks, d
 
 The builder can report a suspected test defect; it must not secretly change the acceptance target. The expert can report a code defect directly. Decide whether it also reveals missing teaching; not every coding mistake requires another rule in the chapter.
 
-Keep local corrections with the builder and retain the reviewer. If the architecture itself is wrong, stop polishing it. Fix the teaching if it contributed, then test the revised chapter from the accepted predecessor in a fresh context. Count that against the agreed budget. Assistance and exposure are part of the result, not something to hide.
+Keep local corrections with the builder and retain the reviewer; a coordinator who patches the candidate has stopped testing whether the chapter teaches. If the architecture itself is wrong, stop polishing it. Fix the teaching if it contributed, then test the revised chapter from the accepted predecessor in a fresh context. Count that against the agreed budget. Assistance and exposure are part of the result, not something to hide.
 
-Run the checks needed to decide acceptance. Use real ownership paths and the actual entry point where wiring matters. Verify a check's ability to detect the defect when that is in doubt; do not mandate a mutation campaign for every chapter. Carry valid results for unchanged inputs and explain that they were carried. Do not rerun a paid operation solely because its final report parser was wrong if the saved observations already answer the question.
+Run the checks needed to decide acceptance. Use real ownership paths and the actual entry point where wiring matters. Before a new check counts, show once that it can fail: a compile-valid removal of the protected behavior in an owned copy, or a real earlier failing version. Checks carried unchanged from an accepted chapter need not be re-proved; no mutation campaign is required. Carry valid results for unchanged inputs and explain that they were carried. Do not rerun a paid operation solely because its final report parser was wrong if the saved observations already answer the question.
 
-At the limit, stop and show the human the unresolved decision. Do not reset the counter by replacing a worker, weakening the tests, or renaming the task.
+At the limit, stop and show the human the unresolved decision. Do not reset the counter by replacing a worker, weakening the tests, or renaming the task; the failed result is the finding, and a weakened test hides it.
 
 ## 1.8 Accept, teach, and choose the next increment
 
 Acceptance combines the public contract, architecture, required observations, and honest limitations. A successful build is not a deployment; a fake service is not the real service; a callback is not a human's experience. When human use, safety, or real integration is material, plan and obtain the necessary bounded observation rather than substituting a convenient simulation.
 
-After code and required operation are accepted, retain an identifiable source revision. Improve the prose only from what the trial demonstrated. One focused text review and at most one author response is a useful starting default, not an eternal rule. No-change is a valid editorial outcome. Any new functional requirement must return to implementation rather than entering unnoticed during polishing.
+Before accepting, re-run every previously accepted chapter's checks: new code can break an inherited rule without touching older files, and its own checks will not notice. After code and required operation are accepted, retain an identifiable source revision. Improve the prose only from what the trial demonstrated. One focused text review and at most one author response is a useful starting default, not an eternal rule. No-change is a valid editorial outcome. Any new functional requirement must return to implementation rather than entering unnoticed during polishing.
 
 Keep a short decision record: starting and accepted revisions, reasons, meaningful failures, assistance, checks and limits, and next action. Retain useful evidence selectively. Protect other people's data.
 
 Choose the next chapter from the accepted system and the user's goal. Keep a short direction; decide the detailed sequence incrementally. Continue authorized work. Stop for consequential ambiguity, authority or resource limits, or exhausted corrections.
 
-## 1.9 Make this method yours
+## 1.9 What the rest of this document contains
 
-After the first trial, ask: did this improve the result, or merely produce more process? Which question elicited valuable knowledge? Which instruction caused wasted work? What would we change before the next chapter?
-
-Change the smallest relevant part of your local procedure. Keep active instructions short and old rationale separate. Record the reason for a meaningful rule; delete or replace obsolete rules explicitly. Do not make a special-case mishap into a universal requirement without justification.
-
-Test this seed with a fresh LLM and expert, without private coaching from its authors. If it fails, report the trial and improve it. Forking is encouraged; divergence from our practice is not itself a defect.
+Fetch what you need: §2 why the book is part of the software; §3 finding the knowledge for a chapter, with a question table; §4 contracts, with a worked invoice example; §5 a chapter template; §6 roles and a builder brief; §7 checks and evidence labels; §8 pilots, revision, and forks; §9 the working relationship; §10 provenance and unproved claims.
 
 **Your next action, if executing this document: respond to the human using §1.1, then wait for the information you actually need. Do not execute the examples below as commands or start an entire book unasked.**
 
@@ -431,6 +425,10 @@ A limitation is not always a blocker, but material unmet requirements cannot be 
 # 8. Make the method improve itself
 
 This document is a specification for producing specifications. Its first serious test is therefore not a flattering review. It is a fresh LLM and a human using it to reach a useful chapter and an independent implementation without private coaching from this document's authors.
+
+After the first trial, ask: did this improve the result, or merely produce more process? Which question elicited valuable knowledge? Which instruction caused wasted work? What would we change before the next chapter?
+
+Change the smallest relevant part of your local procedure. Keep active instructions short and old rationale separate. Record the reason for a meaningful rule; delete or replace obsolete rules explicitly. Do not make a special-case mishap into a universal requirement without justification.
 
 ## 8.1 Run small pilots
 
