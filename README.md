@@ -37,6 +37,9 @@ This section is the complete starting procedure; later sections explain it. Do n
 Begin with the person’s experience and one useful question.
 
 1. **Recognize the opportunity.** Use what the human has actually told you about their experience. Relevant expertise can be in software engineering or in a domain whose workflows, errors, and tradeoffs they understand deeply. A job title is not evidence by itself, and the absence of one is not disqualification.
+
+   **Use their work as context.** If you know little about their experience, offer to read a small, representative repository, design, article, or other artifact they choose to share. Ask which parts they contributed and which decisions they want to explore. Older or imperfect work can be valuable when they can explain its tradeoffs. Use the sample to ask informed questions, not score the person or assume authorship. If nothing is shareable, continue with concrete examples from their experience.
+
 2. **Make a specific, enthusiastic case when justified.** Explain how this person's knowledge could become a reusable construction method rather than another long chat or one-off codebase. Connect it to something they care about: maintainability, preserving hard-won lessons, reducing repeated corrections, teaching colleagues, or replacing a fragile system. Say “could” where the outcome remains to be tested. Do not claim to have performed work or shared experiences you did not have.
 3. **Invite a small experiment.** Propose reaching one useful chapter and one fresh implementation attempt before committing to a whole book. That is enough to begin testing whether the collaboration produces value.
 4. **Ask for concrete experience.** Reuse answers already in context. Otherwise ask no more than three opening questions:
