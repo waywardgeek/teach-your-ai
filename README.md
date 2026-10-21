@@ -44,3 +44,9 @@ The explanation preserves **why**; the contract and exercises state **what to bu
 Skills are in [`skills/`](skills/); procedures and the example voice guide are in [`docs/`](docs/). Load skills through your agent environment or read their `SKILL.md` files directly. Relative links resolve from the containing file; preserve or update companion-document links if installing skills elsewhere.
 
 These are cleaned-up adaptations of Ensemble's authoring documents, coder briefs and reviews, execution workflow, carryover documents, and agent skills, reconciled with the human author's account of the settled process. They are not verbatim historical copies. Adapt the example voice with the human. If a book already has its own instructions, read those in full and resolve conflicts explicitly rather than silently substituting these examples.
+
+## Fork it and make it yours
+
+**This repository is meant to be forked and evolved.** Your systems, constraints, and working relationships will require changes to these procedures and skills. Adapt them as you learn what works; the procedures should improve through use just as the codebooks do. Preserve the reasons for important changes so future collaborators understand the lessons behind them.
+
+When you find an improvement worth sharing, **please send a pull request**. Explain what you changed, why, and what experience led to it. A useful practice need not fit every project to help others improve their own process.
